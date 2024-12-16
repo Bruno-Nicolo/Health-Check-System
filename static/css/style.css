@@ -124,6 +124,8 @@ body{
   border-radius: 25px;
   max-width: 800px;
   min-width: 200px;
+
+  box-shadow: 5px 5px 10px gray;
 }
 
 button{
@@ -151,6 +153,7 @@ input{
   border: none;
   border-radius: 10px;
   padding-left: 10px;
+  margin-bottom: 10px;
 }
 
 li{
@@ -223,6 +226,7 @@ a{
 
 
 .grid-item {
+  box-shadow: 5px 5px 10px gray;
   font: var(--p);
   background-color: var(--white);
   padding: 35px 25px;
