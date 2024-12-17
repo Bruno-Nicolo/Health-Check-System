@@ -33,7 +33,7 @@
         
         <div class="grid-item item3">
             <div style="font: var(--h2)">DISK SPACE</div>
-            <div style="font:var(--h1)">
+            <div class="data row" style="font:var(--h1)">
                 <div>{{disk.used}}GB</div>
                 {% if disk.get_priority != "" %}
                     <i data-lucide="circle-alert" style="color: var(--red);"></i> 
@@ -77,7 +77,7 @@
             </div>
             <hr>
             <div class="row">
-                <div style="flex-grow: 1;">Percentage:</div>
+                <div style="flex-grow: 1;"> Available Percentage:</div>
                 <div class="data row">
                     {% if ram.get_priority() != "" %}
                     <i data-lucide="circle-alert" style="color: var(--red);"></i> 
@@ -106,8 +106,13 @@
             </div>
             <hr>
             <div class="row">
-                <div style="flex-grow: 1;">Percentage:</div>
-                <div class="data">{{disk.percent}}%</div>
+                <div style="flex-grow: 1;">Used Percentage:</div>
+                <div class="data row">
+                    {% if disk.get_priority != "" %}
+                    <i data-lucide="circle-alert" style="color: var(--red);"></i>
+                    {% endif %}
+                    <div>{{disk.percent}}%</div>
+                </div>
             </div>
         </div>
         

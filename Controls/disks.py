@@ -1,5 +1,5 @@
 
-import psutil
+import shutil
 
 
 class Disk:
@@ -22,23 +22,25 @@ class Disk:
 
 
     def set_used(self):
-        disks = psutil.disk_usage('/').used
-        self.used = round(disks * 10**(-9), 2) #da byte a gigabyte
+        disks = shutil.disk_usage("/")
+
+        self.used = round(disks.used / (1024**3),2)  # da byte a gigabyte
         return self.used 
 
 
     def set_total(self):
-        disks = psutil.disk_usage('/')
+        disks = shutil.disk_usage("/")
         self.total = round(disks.total * 10**(-9), 2) #da byte a gigabyte
         return self.total
 
     def set_percent(self):
-        self.percent = psutil.disk_usage('/').percent
+        disks = shutil.disk_usage("/")
+        self.percent = round(disks.used / disks.total * 100, 1)
         return self.percent
 
 
     def get_priority(self):
-        free = psutil.disk_usage('/').free * 2 ** (-30)
+        free = self.total-self.used
         if free <= self.threshold:
             return "🟠"
         else:
