@@ -20,7 +20,7 @@ class Cpu:
 
 
     def set_frequency(self):
-        self.frequency = psutil.cpu_freq().current
+        self.frequency = int(psutil.cpu_freq().current)
         # attuale frequenza di clock della cpu
         return self.frequency
 

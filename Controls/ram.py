@@ -1,3 +1,5 @@
+from xxlimited_35 import error
+
 import psutil
 
 
@@ -31,16 +33,22 @@ class Ram:
 
     #memoria attiva è la memoria attualmente in uso e quindi è in RAM
     def set_active(self):
-        ram = psutil.virtual_memory()
-        self.active = round(ram.active * 2**(-30), 2)
-        return self.active
+        try:
+            ram = psutil.virtual_memory()
+            self.active = round(ram.active * 2**(-30), 2)
+            return self.active
+        except error:
+            return "Not Available"
 
 
     #memoria inattiva è la memoria non utilizzata
     def set_inactive(self):
-        ram = psutil.virtual_memory()
-        self.inactive = round(ram.inactive * 2**(-30), 2)
-        return self.inactive
+        try:
+            ram = psutil.virtual_memory()
+            self.inactive = round(ram.inactive * 2**(-30), 2)
+            return self.inactive
+        except error:
+            return "Not Available"
 
 
     def get_priority(self):

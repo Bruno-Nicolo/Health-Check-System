@@ -258,7 +258,7 @@ a{
 
 .item6 {
   grid-column: 1 / span 3;
-  grid-row: 4 / span 5;
+  grid-row: 4 / span 4;
 }
 
 .item7 {
@@ -268,7 +268,7 @@ a{
 
 .item8 {
   grid-column: 4 / span 3;
-  grid-row: 8 / span 3;
+  grid-row: 7 / span 3;
 }
 
 .row{

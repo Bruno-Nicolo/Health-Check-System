@@ -66,16 +66,18 @@
                 <div class="data">{{ram.available}}GB</div>
             </div>
             <hr>
-            <div class="row">
-                <div style="flex-grow: 1;">Active:</div>
-                <div class="data">{{ram.active}}GB</div>
-            </div>
-            <hr>
-            <div class="row">
-                <div style="flex-grow: 1;">Inactive:</div>
-                <div class="data">{{ram.inactive}}GB</div>
-            </div>
-            <hr>
+            {% if ram.active != "Not Available"%}
+                <div class="row">
+                    <div style="flex-grow: 1;">Active:</div>
+                    <div class="data">{{ram.active}}GB</div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div style="flex-grow: 1;">Inactive:</div>
+                    <div class="data">{{ram.inactive}}GB</div>
+                </div>
+                <hr>
+            {% endif %}
             <div class="row">
                 <div style="flex-grow: 1;"> Available Percentage:</div>
                 <div class="data row">
