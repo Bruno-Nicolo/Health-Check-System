@@ -1,6 +1,6 @@
 # SysScanner 🚨
 
-HealthSoftware engineering course project.
+Software engineering course project.
 
 ### Introduction
 
